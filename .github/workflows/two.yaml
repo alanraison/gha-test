@@ -1,0 +1,13 @@
+# .github/workflows/two.yaml
+name: Two
+on:
+  workflow_call:
+    inputs:
+      environment:
+        type: string
+jobs:
+  something:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - run: echo ${{ vars.FOO }}

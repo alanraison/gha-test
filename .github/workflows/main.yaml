@@ -1,0 +1,13 @@
+# .github/workflows/main.yaml
+name: main workflow
+on: workflow_dispatch
+jobs:
+  one:
+    uses: ./.github/workflows/one.yaml
+    with:
+      environment: test
+  two:
+    needs: one
+    uses: ./.github/workflows/two.yaml
+    with:
+      environment: test
